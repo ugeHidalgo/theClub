@@ -12,7 +12,7 @@
     <p class="Introduction">
         Este es el nuevo site para el club de triatlon #theClub, mientras se implementa este sitio puedes acceder a nuestro actual blog en :
                     <a href="http://www.sharptheclub.com">www.sharptheclub.com</a>.                    
-                    Si  lo deseas puedes dejar un comentario en el formulario de contacto que encontrarás en el pie de página.
+                    Si  lo deseas puedes dejar un comentario usandooo el formulario de contacto que encontrarás en el pie de página.
     </p>
     <p class="Introduction">
         This is a Demo for the new web site for the triathlon club #theClub, while we are under construcction you can visit our site at :
