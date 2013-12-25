@@ -1,0 +1,335 @@
+﻿body
+{
+    background-position: left;
+    background-image: url('../../Images/bandaLateral.PNG');
+    background-repeat: repeat-y;
+    background-color: black;
+    color: white;
+}
+
+#PageWrapper
+{
+    width: 100%;
+    margin: auto;
+    height: 1198px;
+}
+
+/*#region Header*/
+header
+{
+    width: 100%;
+    height: 300px;
+    top: -2px;
+    left: 2px;
+    padding-bottom: 20px;
+    background-color: black;
+    z-index: 0;
+    position: relative;
+    background-size: contain;
+    background-image: url('theClubLetters.png');
+    background-repeat: no-repeat;
+    background-position: 50% bottom;
+    background-color: transparent;
+}
+
+/*#endregion*/
+
+/*#region Login Buttons*/
+.loginButton
+{
+    z-index: 100;
+    position: relative;
+    float: right;
+    -moz-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    box-shadow: inset 0px 1px 0px 0px #97c4fe;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0');
+    background-color: #3d94f6;
+    -webkit-border-top-left-radius: 36px;
+    -moz-border-radius-topleft: 36px;
+    border-top-left-radius: 36px;
+    -webkit-border-top-right-radius: 0px;
+    -moz-border-radius-topright: 0px;
+    border-top-right-radius: 0px;
+    -webkit-border-bottom-right-radius: 36px;
+    -moz-border-radius-bottomright: 36px;
+    border-bottom-right-radius: 36px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-left-radius: 0px;
+    text-indent: 0;
+    border: 1px solid #337fed;
+    display: inline-block;
+    color: black;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    height: 30px;
+    line-height: 36px;
+    width: 125px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 0px #1570cd;
+    top: 13px;
+    left: -7px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+    .loginButton:hover
+    {
+        background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6) );
+        background: -moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+        background-color: #1e62d0;
+    }
+
+    .loginButton:active
+    {
+        z-index: 100;
+        position: relative;
+        float: right;
+    }
+/*#endregion*/
+
+/*#region Configuración elementos menu*/
+#MainMenu
+{
+    width: 651px;
+    margin: auto;
+}
+
+.menuItemL1
+{
+    -moz-box-shadow: inset 0px 1px 0px 0px #fbafe3;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #fbafe3;
+    box-shadow: inset 0px 1px 0px 0px #fbafe3;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff5bb0), color-stop(1, #d90b79) );
+    background: -moz-linear-gradient( center top, #ff5bb0 5%, #d90b79 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bb0', endColorstr='#d90b79');
+    background-color: #ff5bb0;
+    -webkit-border-top-left-radius: 15px;
+    -moz-border-radius-topleft: 15px;
+    border-top-left-radius: 15px;
+    -webkit-border-top-right-radius: 15px;
+    -moz-border-radius-topright: 15px;
+    border-top-right-radius: 15px;
+    -webkit-border-bottom-right-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-left-radius: 0px;
+    text-indent: 0px;
+    border: 1px solid #ee1eb5;
+    display: inline-block;
+    color: white;
+    font-family: 'SignPainter HouseCasual';
+    font-size: 36px;
+    font-weight: bold;
+    font-style: normal;
+    height: 35px;
+    line-height: 35px;
+    width: 150px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 0px 0px #c70067;
+}
+
+    .menuItemL1:hover
+    {
+        background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #d90b79), color-stop(1, #ff5bb0) );
+        background: -moz-linear-gradient( center top, #d90b79 5%, #ff5bb0 100% );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d90b79', endColorstr='#ff5bb0');
+        background-color: #d90b79;
+    }
+
+    .menuItemL1:active
+    {
+        position: relative;
+        top: 1px;
+    }
+
+
+.menuItemL2
+{
+    -moz-box-shadow: inset 0px 1px 0px 0px #fbafe3;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #fbafe3;
+    box-shadow: inset 0px 1px 0px 0px #fbafe3;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff5bb0), color-stop(1, #ef027d) );
+    background: -moz-linear-gradient( center top, #ff5bb0 5%, #ef027d 100% );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bb0', endColorstr='#ef027d');
+    background-color: #ff5bb0;
+    -webkit-border-top-left-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+    border-top-left-radius: 0px;
+    -webkit-border-top-right-radius: 0px;
+    -moz-border-radius-topright: 0px;
+    border-top-right-radius: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    -moz-border-radius-bottomright: 0px;
+    border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    border-bottom-left-radius: 0px;
+    text-indent: 0;
+    border: 1px solid #ee1eb5;
+    display: inline-block;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    height: 35px;
+    line-height: 35px;
+    width: 160px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 1px 1px 0px #c70067;
+}
+
+    .menuItemL2:hover
+    {
+        background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ef027d), color-stop(1, #ff5bb0) );
+        background: -moz-linear-gradient( center top, #ef027d 5%, #ff5bb0 100% );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef027d', endColorstr='#ff5bb0');
+        background-color: #ef027d;
+    }
+
+    .menuItemL2:active
+    {
+        position: relative;
+        top: 1px;
+    }
+/*#endregion*/
+
+/*#region Main Content*/
+section#MainContent
+{
+    padding: 2%;
+    width: 60%; /*18-56-18%;*/
+    float: left;
+    color: white;
+}
+
+    section#MainContent a
+    {
+        color: #4cff00;
+        text-decoration: underline;
+    }
+
+        section#MainContent a:visited
+        {
+            color: #ff0000;
+            text-decoration: underline;
+        }
+
+        section#MainContent a:hover
+        {
+            color: #ffa500;
+            text-decoration: underline;
+        }
+
+/*#endregion*/
+
+/*#region Side Bars*/
+aside
+{
+    padding: 1%;
+    background-color: transparent;
+    height: 597px;
+    border-radius: 10px;
+    color: white;
+}
+
+.rightBar
+{
+    float: right;
+    width: 18%; /*147px*/
+}
+
+.leftBar
+{
+    float: left;
+    background-color: transparent;
+    width: 14%;  /*18%*/
+}
+
+#BannerVert
+{
+    /*width: 80px;
+    margin: auto;
+    position: relative;*/
+}
+
+
+/*#endregion*/
+
+/*#region Footer*/
+footer
+{
+    background-color: transparent;
+    width: 100%;
+    top: 13px;
+    left: 0px;
+    clear: both;
+    color: #ffffff;
+    position: relative;
+    border-radius: 5px;
+    color: White;
+    height: 167px;
+}
+
+#footerInner
+{
+    margin: auto;
+    width: 687px;
+}
+/*#endregion*/
+
+.ErrorMessage
+{
+    color: Red;
+}
+
+.PleaseWait
+{
+    height: 32px;
+    width: 500px;
+    background-image: url('../../Images/PleaseWait.gif');
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    line-height: 32px;
+}
+
+.Attention
+{
+border: 4px solid red;
+padding: 10px 0;
+width: 100px;
+margin: auto;
+display: block;
+text-align: center;
+}
+
+
+/*#region Para la página de demo: ManagePhoto Album de PlanetWorx*/
+.ItemContainer
+{
+width: 600px;
+list-style-type: none;
+clear: both;
+}
+.ItemContainer li
+{
+height: 300px;
+width: 200px;
+float: left;
+}
+.ItemContainer li img
+{
+width: 180px;
+margin: 10px 20px 10px 0;
+}
+/*#endregion*/

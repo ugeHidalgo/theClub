@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TheClubBDModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TheClubBDModelStoreContainer">
+          <EntitySet Name="Members" EntityType="TheClubBDModel.Store.Members" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Races" EntityType="TheClubBDModel.Store.Races" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RaceTypes" EntityType="TheClubBDModel.Store.RaceTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sponsors" EntityType="TheClubBDModel.Store.Sponsors" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Races_RaceTypes" Association="TheClubBDModel.Store.FK_Races_RaceTypes">
+            <End Role="RaceTypes" EntitySet="RaceTypes" />
+            <End Role="Races" EntitySet="Races" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="SecondName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="eMail" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="BDate" Type="date" Nullable="false" />
+          <Property Name="RegDate" Type="date" Nullable="false" />
+          <Property Name="Federated" Type="bit" Nullable="false" />
+          <Property Name="Addres" Type="varchar" MaxLength="100" />
+          <Property Name="AddresNumber" Type="int" />
+          <Property Name="CPost" Type="varchar" MaxLength="5" />
+          <Property Name="Town" Type="varchar" MaxLength="100" />
+          <Property Name="Province" Type="varchar" MaxLength="100" />
+          <Property Name="Country" Type="varchar" MaxLength="100" />
+          <Property Name="tlf" Type="varchar" MaxLength="10" />
+          <Property Name="tlfMobile" Type="varchar" MaxLength="10" />
+          <Property Name="DNI" Type="varchar" MaxLength="10" />
+          <Property Name="theClubNumer" Type="int" />
+          <Property Name="photoUrl" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Races">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="200" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Ciudad" Type="nchar" MaxLength="100" />
+          <Property Name="Provincia" Type="nchar" MaxLength="100" />
+          <Property Name="Pais" Type="nchar" MaxLength="100" />
+          <Property Name="RaceTypeId" Type="int" Nullable="false" />
+          <Property Name="Memo" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="RaceTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nchar" Nullable="false" MaxLength="200" />
+          <Property Name="PuntosPart" Type="int" Nullable="false" />
+          <Property Name="Memo" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Sponsors">
+          <Key>
+            <PropertyRef Name="SponsorID" />
+          </Key>
+          <Property Name="SponsorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="PersonaContacto" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="FechaAlta" Type="date" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="Memo" Type="varchar(max)" />
+        </EntityType>
+        <Association Name="FK_Races_RaceTypes">
+          <End Role="RaceTypes" Type="TheClubBDModel.Store.RaceTypes" Multiplicity="1" />
+          <End Role="Races" Type="TheClubBDModel.Store.Races" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Races">
+              <PropertyRef Name="RaceTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TheClubBDModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TheClubBDEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Members" EntityType="TheClubBDModel.Member" />
+          <EntitySet Name="Sponsors" EntityType="TheClubBDModel.Sponsors" />
+          <EntitySet Name="Races" EntityType="TheClubBDModel.Race" />
+          <EntitySet Name="RaceTypes" EntityType="TheClubBDModel.RaceType" />
+          <AssociationSet Name="FK_Races_RaceTypes" Association="TheClubBDModel.FK_Races_RaceTypes">
+            <End Role="RaceType" EntitySet="RaceTypes" />
+            <End Role="Race" EntitySet="Races" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SecondName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="eMail" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="RegDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Federated" Type="Boolean" Nullable="false" />
+          <Property Name="Addres" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="AddresNumber" Type="Int32" />
+          <Property Name="CPost" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="Town" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Province" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="tlf" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="tlfMobile" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DNI" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Type="Int32" Name="theClubNumer" />
+          <Property Type="String" Name="photoUrl" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sponsors">
+          <Key>
+            <PropertyRef Name="SponsorID" />
+          </Key>
+          <Property Type="Int32" Name="SponsorID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PersonaContacto" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" Precision="0" />
+          <Property Type="Boolean" Name="Activo" Nullable="false" />
+          <Property Type="String" Name="Memo" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Race">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Ciudad" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Provincia" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Pais" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="RaceTypeId" Nullable="false" />
+          <NavigationProperty Name="RaceType" Relationship="TheClubBDModel.FK_Races_RaceTypes" FromRole="Race" ToRole="RaceType" />
+          <Property Type="String" Name="Memo" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RaceType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="PuntosPart" Nullable="false" />
+          <NavigationProperty Name="Races" Relationship="TheClubBDModel.FK_Races_RaceTypes" FromRole="RaceType" ToRole="Race" />
+          <Property Type="String" Name="Memo" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Races_RaceTypes">
+          <End Type="TheClubBDModel.RaceType" Role="RaceType" Multiplicity="1" />
+          <End Type="TheClubBDModel.Race" Role="Race" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RaceType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Race">
+              <PropertyRef Name="RaceTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TheClubBDModelStoreContainer" CdmEntityContainer="TheClubBDEntities">
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="TheClubBDModel.Member">
+              <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="photoUrl" ColumnName="photoUrl" />
+                <ScalarProperty Name="theClubNumer" ColumnName="theClubNumer" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SecondName" ColumnName="SecondName" />
+                <ScalarProperty Name="eMail" ColumnName="eMail" />
+                <ScalarProperty Name="BDate" ColumnName="BDate" />
+                <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+                <ScalarProperty Name="Federated" ColumnName="Federated" />
+                <ScalarProperty Name="Addres" ColumnName="Addres" />
+                <ScalarProperty Name="AddresNumber" ColumnName="AddresNumber" />
+                <ScalarProperty Name="CPost" ColumnName="CPost" />
+                <ScalarProperty Name="Town" ColumnName="Town" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="tlf" ColumnName="tlf" />
+                <ScalarProperty Name="tlfMobile" ColumnName="tlfMobile" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sponsors">
+            <EntityTypeMapping TypeName="TheClubBDModel.Sponsors">
+              <MappingFragment StoreEntitySet="Sponsors">
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="PersonaContacto" ColumnName="PersonaContacto" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Races">
+            <EntityTypeMapping TypeName="TheClubBDModel.Race">
+              <MappingFragment StoreEntitySet="Races">
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="RaceTypeId" ColumnName="RaceTypeId" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RaceTypes">
+            <EntityTypeMapping TypeName="TheClubBDModel.RaceType">
+              <MappingFragment StoreEntitySet="RaceTypes">
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="PuntosPart" ColumnName="PuntosPart" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

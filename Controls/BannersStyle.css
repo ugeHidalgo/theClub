@@ -1,0 +1,25 @@
+﻿body
+{
+    position: relative;
+    width: 80px;
+    height: 600px;
+    margin: auto;
+}
+
+#VerticalPanel1
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+#ImageVert1
+{
+    position: relative;
+    width: 100%;
+    height: 100%;   
+    background-color: transparent;
+}
+
+

@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Frontend.master.cs" Inherits="MasterPages_Frotend" %>
+
+<%@ Register Src="../Controls/BannerV.ascx" TagName="BannerV" TagPrefix="uc1" %>
+<%@ Register Src="../Controls/BannerH.ascx" TagName="BannerH" TagPrefix="uc1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="../Scripts/modernizr-2.6.2.js"></script>
+    <style type="text/css">
+        .auto-style1
+        {
+            width: 45px;
+        }
+
+        .auto-style2
+        {
+            width: 269px;
+        }
+
+        .auto-style3
+        {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
+            <Scripts>
+                <%--<asp:ScriptReference Path="~/Scripts/jquery-2.0.3.min.js" />--%>
+                <asp:ScriptReference Name="jquery" />
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div id="PageWrapper">
+            <header>
+                <asp:LinkButton ID="lBtLogin" runat="server" PostBackUrl="~/Login.aspx" CssClass="loginButton">Login</asp:LinkButton>
+                <asp:LinkButton ID="lBtRegister" runat="server" PostBackUrl="~/Login.aspx" CssClass="loginButton">Register</asp:LinkButton>
+            </header>
+            <nav id="MainMenu">
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False">
+                    <DynamicHoverStyle CssClass="menuItemL2:hover" />
+                    <DynamicMenuItemStyle CssClass="menuItemL2" />
+                    <DynamicSelectedStyle CssClass="menuItemL2:Active" />
+                    <StaticHoverStyle CssClass="menuItemL1:hover" />
+                    <StaticMenuItemStyle CssClass="menuItemL1" />
+                    <StaticSelectedStyle CssClass="menuItemL1:Active" />
+                </asp:Menu>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+                <asp:SiteMapPath ID="SiteMapPath1" runat="server"></asp:SiteMapPath>
+            </nav>
+
+
+            <aside class="leftBar">
+                <div style="text-align: center;" >
+                    <uc1:BannerV ID="BannerVert" runat="server" />
+                </div>
+            </aside>
+
+            <section id="MainContent">
+                <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+
+            <aside class="rightBar">
+                Estilos de visualización :
+                <asp:DropDownList ID="ddlThemeList" runat="server" AutoPostBack="True" Height="22px" OnSelectedIndexChanged="ddlThemeList_SelectedIndexChanged" Width="95%">
+                    <asp:ListItem Value="theClubClassic">#heClub Classic Style</asp:ListItem>
+                    <asp:ListItem Value="theClubModern">#heClub Modern Style</asp:ListItem>
+                </asp:DropDownList>
+                <br />
+                <br />
+                Site-Map
+                <br />
+                <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
+                </asp:TreeView>
+            </aside>
+
+           
+
+            <footer>
+                <table id="footerInner">
+                    <tr>
+                        <td class="auto-style3">&nbsp;</td>
+                        <td class="auto-style1">
+                            &nbsp;</td>
+                        <td class="auto-style1">
+                            &nbsp;</td>
+                        <td class="auto-style1">
+                            &nbsp;</td>
+                        <td class="auto-style2">&nbsp;</td>
+                    </tr>
+                   
+                    <tr>
+                        <td class="auto-style3" colspan="5">
+                            <div style="text-align: center;" >
+                                <uc1:BannerH ID="BannerH1" runat="server" />
+                            </div>
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td class="auto-style3">@ 2013-2014 Powered by #heClub
+                                &nbsp;|&nbsp;
+                        </td>
+                        <td class="auto-style1">
+                            <asp:ImageButton ID="imgbtnBlog" runat="server" ImageUrl="~/Images/Logos/theClubMini.jpg" PostBackUrl="http://www.sharptheclub.com/" ForeColor="Gray" Height="40px" Width="43px" />
+                        </td>
+                        <td class="auto-style1">
+                            <asp:ImageButton ID="imgbtnfacebook" runat="server" ImageUrl="~/Images/Logos/facebook.png" PostBackUrl="https://www.facebook.com/sharptheclubthepage" ForeColor="Gray" Height="40px" Width="43px" />
+                        </td>
+                        <td class="auto-style1">
+                            <asp:ImageButton ID="imgbtnTwitter" runat="server" ImageUrl="~/Images/Logos/twitter.png" BackColor="Gray" Height="40px" Width="40px" PostBackUrl="https://twitter.com/sharptheclub" />
+                        </td>
+                        <td class="auto-style2">&nbsp;|&nbsp;
+                                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/About/Contact.aspx">Comentarios / Comments</asp:HyperLink>
+                        </td>
+                    </tr>                   
+                </table>
+            </footer>
+        </div>
+<%--        <asp:ContentPlaceHolder ID="cpClientScript" runat="server">
+        </asp:ContentPlaceHolder>--%>
+    </form>
+</body>
+</html>

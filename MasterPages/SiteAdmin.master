@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteAdmin.master.cs" Inherits="MasterPages_SiteAdmin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+        <link href="../App_Themes/Normal/NormalStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav id="AdminMenu">
+                <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False">
+                    <DynamicHoverStyle CssClass="itemButton" />
+                    <DynamicMenuItemStyle CssClass="itemButton" />
+                    <DynamicSelectedStyle CssClass="itemButton" />
+                    <DynamicItemTemplate>
+                        <%# Eval("Text") %>
+                    </DynamicItemTemplate>
+                    <Items>
+                        <asp:MenuItem Text="Inicio" Value="Miembros" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/SiteAdmin/Members.aspx" Text="Miembros" Value="Miembros"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/SiteAdmin/Sponsors.aspx" Text="Sponsors" Value="Sponsors"></asp:MenuItem>
+                        <asp:MenuItem Selectable="False" Text="Carreras" Value="Carreras">
+                            <asp:MenuItem NavigateUrl="~/SiteAdmin/Races.aspx" Text="Carreras" Value="Carreras"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/SiteAdmin/RaceTypes.aspx" Text="Tipos de Carrera" Value="Tipos de Carrera"></asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Material" Value="Material"></asp:MenuItem>
+                        <asp:MenuItem Selectable="False" Text="Configuración" Value="Configuración">
+                            <asp:MenuItem Text="Fotos Portada" Value="Fotos Portada"></asp:MenuItem>
+                            <asp:MenuItem Text="Banners" Value="Banners"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle CssClass="adminButton" />
+                    <StaticMenuItemStyle CssClass="adminButton" />
+                    <StaticSelectedStyle CssClass="adminButton" />
+                </asp:Menu>
+            </nav>
+            <asp:ContentPlaceHolder ID="cpMainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+    </form>
+</body>
+</html>

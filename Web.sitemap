@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/" title="Home"  description="Home">
+    <siteMapNode url="~/Default.aspx" title="Home"  description="Go to the Homepage">    
+      <siteMapNode url="http://www.sharptheclub.com" title="The Blog" description="El blog del club" />   
+      <siteMapNode url="http://www.sharptheclub.com/p/theidea.html" title="Historia" description="¿Qué es #heClub?" />
+      <siteMapNode url="http://www.sharptheclub.com/p/quienessomos.html" title="The Team" description="Miembros del club" />
+      <siteMapNode url="http://www.sharptheclub.com/p/competiciones.html" title="Logros" description="Pruebas en las que hemos competido" />
+      <siteMapNode url="http://www.sharptheclub.com/p/thec.html" title="Bloggers" description="Los Blogs de los miembros del club" />      
+    </siteMapNode>
+    <siteMapNode url="~/theRush/theRush.aspx" title="#heRush"  description="La liga interna" >
+      <siteMapNode url="~/theRush/theRushIntroData.aspx" title="Entrada" description="Entrada de Resultados" />
+      <siteMapNode url="~/theRush/theRushStandings.aspx" title="Clasificaciones" description="Clasificaciones" />
+    </siteMapNode>
+    <siteMapNode url="~/theShop/theShop.aspx" title="#heShop" description="La tienda de #theClub" />
+    <siteMapNode url="~/Login/Users.aspx" title="#theUsers" description="The Users corner" >
+      <siteMapNode url="~/Login/Login.aspx" title="Login" description="Entrar como usuario registrado" />
+      <siteMapNode url="~/Login/Register.aspx" title="Register" description="Nuevo Usuario" />
+      <siteMapNode url="~/SiteAdmin/DefaultAdmin.aspx" title="Administración" description="Administración" />
+    </siteMapNode>  
+  </siteMapNode>
+</siteMap>
